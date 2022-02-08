@@ -4,7 +4,9 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace _413Mission06.Models
+//samis comment
+
+namespace Mission6.Models
 {
     public class Category
     {
@@ -12,5 +14,6 @@ namespace _413Mission06.Models
         [Required]
         public int CategoryID { get; set; }
         public string CategoryName { get; set; }
+
     }
 }
