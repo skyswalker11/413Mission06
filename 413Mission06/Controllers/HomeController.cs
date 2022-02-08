@@ -16,9 +16,9 @@ namespace _413Mission06.Controllers
     {
 
 
-        private FilmContext _MFContext { get; set; }
+        private TaskInfoCOntext _MFContext { get; set; }
         //Constructor
-        public HomeController(FilmContext contextVariable)
+        public HomeController(TaskInfoCOntext contextVariable)
         {
             _MFContext = contextVariable;
         }
@@ -38,7 +38,7 @@ namespace _413Mission06.Controllers
         public IActionResult MovieForm()
         {
 
-            ViewBag.Categories = _MFContext.Category.ToList();
+            ViewBag.Categories = _MFContext.Tasks.ToList();
 
             return View();
         }
@@ -49,7 +49,7 @@ namespace _413Mission06.Controllers
         {
             if (ModelState.IsValid)
             {
-                ViewBag.Categories = _MFContext.Category.ToList();
+                ViewBag.Categories = _MFContext.Tasks.ToList();
 
                 _MFContext.Add(ar);
                 _MFContext.SaveChanges();
@@ -58,7 +58,7 @@ namespace _413Mission06.Controllers
             }
             else //if invalid
             {
-                ViewBag.Categories = _MFContext.Category.ToList();
+                ViewBag.Categories = _MFContext.Tasks.ToList();
 
                 return View();
             }
@@ -79,7 +79,7 @@ namespace _413Mission06.Controllers
         [HttpGet]
         public IActionResult Edit(int applicationid)
         {
-            ViewBag.Categories = _MFContext.Category.ToList();
+            ViewBag.Categories = _MFContext.Tasks.ToList();
 
             var form = _MFContext.R.Single(x => x.ApplicationID == applicationid);
 
