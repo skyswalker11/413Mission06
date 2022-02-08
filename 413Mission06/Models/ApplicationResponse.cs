@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Mission6.Models
 {
-    public class EnterTaskSubmission
+    public class ApplicationResponse
     {
         [Key]
         [Required]
-        public int TaskID { get; set; }
+        public int Applicationid { get; set; }
         [Required(ErrorMessage = "Task is Required")]
         public string Task { get; set; }
         public DateTime DueDate { get; set; }

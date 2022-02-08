@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using Mission6.Models;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -81,7 +82,7 @@ namespace _413Mission06.Controllers
         {
             ViewBag.Categories = _MFContext.Tasks.ToList();
 
-            var form = _MFContext.R.Single(x => x.ApplicationID == applicationid);
+            var form = _MFContext.R.Single(x => x.Applicationid == applicationid);
 
             return View("MovieForm", form);
         }
@@ -99,7 +100,7 @@ namespace _413Mission06.Controllers
         [HttpGet]
         public IActionResult Delete(int applicationid)
         {
-            var application = _MFContext.R.Single(x => x.ApplicationID == applicationid);
+            var application = _MFContext.R.Single(x => x.Applicationid == applicationid);
 
             return View(application);
         }

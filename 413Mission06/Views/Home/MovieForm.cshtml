@@ -18,9 +18,9 @@
         <label asp-for="CategoryID">Category</label>
         <select required asp-for="CategoryID">
             <option value="">Select a Category</option>
-            @foreach (Category c in ViewBag.Categories)
+            @foreach (Task c in ViewBag.Categories)
             {
-                <option value="@c.CategoryID">@c.CategoryName</option>
+                <option value="@c.applicationid">@c.TaskName</option>
             }
         </select><br />
 
@@ -29,7 +29,7 @@
 
         <label asp-for="Year">Year</label>
         <input required asp-for="Year" /><br />
-
+s
         <label asp-for="Director">Director</label>
         <input required asp-for="Director" /><br />
 

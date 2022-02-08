@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Mission6.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,28 +22,24 @@ namespace _413Mission06.Models
         protected override void OnModelCreating(ModelBuilder mb)
         {
 
-            mb.Entity<Task>().HasData(
-
-                  
-                );
 
             mb.Entity<ApplicationResponse>().HasData(
 
                 new ApplicationResponse
                 {
-                    TaskID = 1,
+                    Applicationid = 1,
                     Task = "Shopping"
                  
                 },
 
                 new ApplicationResponse
                 {
-                    TaskID = 1,
+                    Applicationid = 1,
                     Task = "Clean"
                 },
                 new ApplicationResponse
                 {
-                    TaskID = 1,
+                    Applicationid = 1,
                     Task = "Homework"
 
                 }
