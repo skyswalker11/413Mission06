@@ -16,9 +16,9 @@ namespace _413Mission06.Controllers
     {
 
 
-        private FilmContext _MFContext { get; set; }
+        private TaskInfoContext _MFContext { get; set; }
         //Constructor
-        public HomeController(FilmContext contextVariable)
+        public HomeController(TaskInfoContext contextVariable)
         {
             _MFContext = contextVariable;
         }
@@ -35,17 +35,17 @@ namespace _413Mission06.Controllers
 
         //This is the get action
         [HttpGet]
-        public IActionResult MovieForm()
+        public IActionResult CreateTask()
         {
 
-            ViewBag.Categories = _MFContext.Category.ToList();
+            //ViewBag.Categories = _MFContext.Category.ToList();
 
             return View();
         }
 
         //This is the post action
         [HttpPost]
-        public IActionResult MovieForm(ApplicationResponse ar)
+        public IActionResult TaskForm(EnterTaskSubmission ar)
         {
             if (ModelState.IsValid)
             {
@@ -77,18 +77,18 @@ namespace _413Mission06.Controllers
 
         //This function recieves the id of the user-selected record
         [HttpGet]
-        public IActionResult Edit(int applicationid)
+        public IActionResult Edit(int taskid)
         {
             ViewBag.Categories = _MFContext.Category.ToList();
 
-            var form = _MFContext.R.Single(x => x.ApplicationID == applicationid);
+            var form = _MFContext.R.Single(x => x.TaskID == taskid);
 
             return View("MovieForm", form);
         }
 
         //This function recieves the response of form
         [HttpPost]
-        public IActionResult Edit(ApplicationResponse blah)
+        public IActionResult Edit(EnterTaskSubmission blah)
         {
             _MFContext.Update(blah);
             _MFContext.SaveChanges();
@@ -97,16 +97,16 @@ namespace _413Mission06.Controllers
 
         //This function recieves the id of the user-selected record
         [HttpGet]
-        public IActionResult Delete(int applicationid)
+        public IActionResult Delete(int taskid)
         {
-            var application = _MFContext.R.Single(x => x.ApplicationID == applicationid);
+            var task = _MFContext.R.Single(x => x.TaskID == taskid);
 
-            return View(application);
+            return View(task);
         }
 
         //This function recieves the response of the user-selected button (cancel or delete)
         [HttpPost]
-        public IActionResult Delete(ApplicationResponse ar)
+        public IActionResult Delete(EnterTaskSubmission ar)
         {
             _MFContext.R.Remove(ar);
             _MFContext.SaveChanges();

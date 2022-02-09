@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace _413Mission06.Migrations
 {
-    [DbContext(typeof(FilmContext))]
+    [DbContext(typeof(TaskInfoContext))]
     [Migration("20220203012321_Initial")]
     partial class Initial
     {

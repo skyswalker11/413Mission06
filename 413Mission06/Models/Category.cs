@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 //samis comment
 
-namespace Mission6.Models
+namespace _413Mission06.Models
 {
     public class Category
     {

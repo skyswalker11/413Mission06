@@ -5,8 +5,8 @@
     ViewData["Title"] = "TaskForm";
 }
 
-@model _413Mission06.Models.ApplicationResponse
-@model _413Mission06.Models.Category
+@model _413Mission06.Models.EnterTaskSubmission
+@*@model _413Mission06.Models.Category*@
 
 
 <!--This page displays a form for the user to add a movie to the database.-->
@@ -27,14 +27,14 @@
         <label asp-for="Quadrant">Quadrant</label>
         <input required asp-for="Quadrant" /><br />
 
-        <label asp-for="CategoryID">Category</label>
+        @*<label asp-for="CategoryID">Category</label>
         <select required asp-for="CategoryID">
             <option value="">Select a Category</option>
             @foreach (Category c in ViewBag.Categories)
             {
                 <option value="@c.CategoryID">@c.CategoryName</option>
             }
-        </select><br />
+        </select><br />*@
 
         <label asp-for="Completed">Completed</label>
         <select asp-for="Completed">
