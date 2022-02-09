@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace _413Mission06.Migrations
 {
-    [DbContext(typeof(FilmContext))]
+    [DbContext(typeof(TaskInfoContext))]
     partial class FilmContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
