@@ -27,9 +27,9 @@ namespace _413Mission06
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<FilmContext>(options =>
+            services.AddDbContext<TaskInfoContext>(options =>
             {
-                options.UseSqlite(Configuration["ConnectionStrings:BlahConnection"]);
+                options.UseSqlite(Configuration["ConnectionStrings:TaskConnection"]);
             });
         }
 
